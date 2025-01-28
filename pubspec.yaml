@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  fluttertoast: ^8.2.10
 
 dev_dependencies:
   flutter_test:
@@ -59,10 +60,30 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-
+  assets:
+    - Assets/Angkor-Wat-Cambodia.jpg
+    - Assets/Bagan-Myanmar.jpg
+    - Assets/Barcelona-Spain.jpg
+    - Assets/Chittorgarh_fort.jpg
+    - Assets/Giza-Egypt.jpg
+    - Assets/Great-Ocean-Road-Australia.jpg
+    - Assets/Huacachina-Peru.jpg
+    - Assets/Kuang-Si-Falls-Luang-Prabang-Laos.jpg
+    - Assets/Li-River-China.jpg
+    - Assets/Maldives.jpeg
+    - Assets/Meteora-Greece.jpg
+    - Assets/Pamukkale-Turkey.jpg
+    - Assets/Petra-Jordan.jpg
+    - Assets/Reine-Norway.jpg
+    - Assets/Salar-de-Uyuni-Bolivia.jpg
+    - Assets/splash_p.png
+    - Assets/St-Lucia.jpg
+    - Assets/Taj-Mahal-Agra.jpeg
+    - Assets/Tianzi-Mountains-China.jpg
+    - Assets/Torres-del-Paine-National-Park-Patagonia-Chile.jpg
+    - Assets/Venice-Italy.jpg
+    - Assets/Yellowstone-National-Park-Wyoming-USA.jpg
+    - Assets/Zhangye-Danxia-National-Geological-Park-in-China.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
