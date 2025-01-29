@@ -16,6 +16,7 @@ class _Travel_appState extends State<Travel_app> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Splash_screen(),
     );
   }

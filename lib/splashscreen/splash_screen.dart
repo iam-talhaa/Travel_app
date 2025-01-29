@@ -50,13 +50,14 @@ class _Splash_screenState extends State<Splash_screen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 20),
               child: Text(
                 "Luxurious \nVacation",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 40,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat-VariableFont_wght'),
               ),
             ),
             SizedBox(
