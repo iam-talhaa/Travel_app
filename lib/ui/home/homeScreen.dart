@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/Res/Custom_color.dart';
+import 'package:travel_app_ui/ui/home/informtion_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -227,35 +228,44 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (BuildContext context, index) {
                       return Padding(
                           padding: const EdgeInsets.only(left: 5),
-                          child: Container(
-                            height: 130,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image:
-                                      AssetImage(imagePaths[index].toString())),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 5),
-                                  child: Container(
-                                      height: 20,
-                                      width: 180,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.6),
-                                          borderRadius:
-                                              BorderRadius.circular(18)),
-                                      child: Center(
-                                        child: Text(
-                                            location_names[index].toString()),
-                                      )),
-                                )
-                              ],
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Information_screen(
+                                        Image: imagePaths[index],
+                                      )));
+                            },
+                            child: Container(
+                              height: 130,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(18),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        imagePaths[index].toString())),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom: 5),
+                                    child: Container(
+                                        height: 20,
+                                        width: 180,
+                                        decoration: BoxDecoration(
+                                            color:
+                                                Colors.white.withOpacity(0.6),
+                                            borderRadius:
+                                                BorderRadius.circular(18)),
+                                        child: Center(
+                                          child: Text(
+                                              location_names[index].toString()),
+                                        )),
+                                  )
+                                ],
+                              ),
                             ),
                           ));
                     }),
