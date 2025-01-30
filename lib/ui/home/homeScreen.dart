@@ -44,6 +44,61 @@ class _HomeScreenState extends State<HomeScreen> {
     'Assets/Yellowstone-National-Park-Wyoming-USA.jpg',
     'Assets/Zhangye-Danxia-National-Geological-Park-in-China.jpg',
   ];
+  final List<String> recommend_image_path = [
+    'Assets/Pamukkale-Turkey.jpg',
+    'Assets/Petra-Jordan.jpg',
+    'Assets/Reine-Norway.jpg',
+    'Assets/Salar-de-Uyuni-Bolivia.jpg',
+    'Assets/splash_p.png',
+    'Assets/St-Lucia.jpg',
+    'Assets/Taj-Mahal-Agra.jpeg',
+    'Assets/Tianzi-Mountains-China.jpg',
+    'Assets/Torres-del-Paine-National-Park-Patagonia-Chile.jpg',
+    'Assets/Venice-Italy.jpg',
+    'Assets/Yellowstone-National-Park-Wyoming-USA.jpg',
+    'Assets/Zhangye-Danxia-National-Geological-Park-in-China.jpg',
+  ];
+
+  List<String> location_names = [
+    'Angkor-Wat-Cambodia',
+    'Bagan-Myanmar',
+    'Barcelona-Spain',
+    'Chittorgarh_fort',
+    'Giza-Egypt',
+    'Great-Ocean-Aust',
+    'Huacachina-Peru',
+    'Kuang-Si-Falls-',
+    'Li-River-China',
+    'Maldives',
+    'Meteora-Greece',
+    'Pamukkale-Turkey',
+    'Petra-Jordan',
+    'Reine-Norway',
+    'Salar-de-Uyuni-',
+    'splash_p',
+    'St-Lucia',
+    'Taj-Mahal-Agra',
+    'Tianzi-China',
+    'Torres-del-Paine',
+    'Venice-Italy',
+    'Yellowstone--USA',
+    'Zhangye-Danxia-China',
+  ];
+
+  List<String> recommend_location_names = [
+    'Pamukkale-Turkey',
+    'Petra-Jordan',
+    'Reine-Norway',
+    'Salar-de-Uyuni-',
+    'splash_p',
+    'St-Lucia',
+    'Taj-Mahal-Agra',
+    'Tianzi-China',
+    'Torres-del-Paine',
+    'Venice-Italy',
+    'Yellowstone--USA',
+    'Zhangye-Danxia-China',
+  ];
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
@@ -163,9 +218,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 18),
               ),
               Container(
-                height: 150,
+                height: 200,
                 width: double.infinity,
-                decoration: BoxDecoration(color: blueColor),
+                decoration: BoxDecoration(),
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: imagePaths.length,
@@ -176,14 +231,89 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 130,
                             width: 200,
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
                               image: DecorationImage(
                                   fit: BoxFit.cover,
                                   image:
                                       AssetImage(imagePaths[index].toString())),
                             ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  child: Container(
+                                      height: 20,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          borderRadius:
+                                              BorderRadius.circular(18)),
+                                      child: Center(
+                                        child: Text(
+                                            location_names[index].toString()),
+                                      )),
+                                )
+                              ],
+                            ),
                           ));
                     }),
-              )
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Recommended",
+                style: TextStyle(
+                    color: blackColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
+              ),
+              Container(
+                height: 100,
+                width: double.infinity,
+                decoration: BoxDecoration(),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: recommend_location_names.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return Padding(
+                          padding: const EdgeInsets.only(left: 5),
+                          child: Container(
+                            height: 130,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      recommend_image_path[index].toString())),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 5),
+                                  child: Container(
+                                      height: 20,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.6),
+                                          borderRadius:
+                                              BorderRadius.circular(18)),
+                                      child: Center(
+                                        child: Text(
+                                            recommend_location_names[index]
+                                                .toString()),
+                                      )),
+                                )
+                              ],
+                            ),
+                          ));
+                    }),
+              ),
             ],
           ),
         ),
