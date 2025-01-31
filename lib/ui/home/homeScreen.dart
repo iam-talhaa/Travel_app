@@ -230,6 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.only(left: 5),
                           child: GestureDetector(
                             onTap: () {
+                              print("Home SCreen");
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => Information_screen(
                                         Image: imagePaths[index],
