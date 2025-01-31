@@ -231,6 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: GestureDetector(
                             onTap: () {
                               print("Home SCreen");
+                              print("Home SCreen");
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => Information_screen(
                                         Image: imagePaths[index],
