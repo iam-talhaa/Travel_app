@@ -22,6 +22,8 @@ class _Information_screenState extends State<Information_screen> {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
@@ -110,13 +112,101 @@ class _Information_screenState extends State<Information_screen> {
                   Icon(
                     Icons.star,
                     color: Color(0xffDF9652),
+                  ),
+                  Text(
+                    '4.5 (355 Reviews)',
+                    style: TextStyle(color: Colors.grey.withOpacity(1)),
                   )
                 ],
               ),
             ),
-            Text(
-              widget.Intro,
-            )
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14),
+              child: Text(
+                widget.Intro,
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 12),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: Row(
+                children: [
+                  Text(
+                    'Show map',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                  Icon(
+                    Icons.arrow_drop_down,
+                    color: blueColor,
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: Text(
+                "Facilities",
+                style: TextStyle(
+                    color: blackColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(11),
+                      color: const Color.fromARGB(255, 57, 130, 240)
+                          .withOpacity(0.2)),
+                  child: Icon(
+                    Icons.wifi,
+                    size: 33,
+                  ),
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(11),
+                      color: const Color.fromARGB(121, 209, 185, 185)),
+                  child: Icon(
+                    Icons.wifi,
+                    size: 33,
+                  ),
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(11),
+                      color: const Color.fromARGB(121, 209, 185, 185)),
+                  child: Icon(
+                    Icons.wifi,
+                    size: 33,
+                  ),
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(11),
+                      color: const Color.fromARGB(121, 209, 185, 185)),
+                  child: Icon(
+                    Icons.wifi,
+                    size: 33,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
