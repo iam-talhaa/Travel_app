@@ -3,7 +3,13 @@ import 'package:travel_app_ui/Res/Custom_color.dart';
 
 class Information_screen extends StatefulWidget {
   final Image;
-  const Information_screen({super.key, required this.Image});
+  final String;
+  final Intro;
+  const Information_screen(
+      {super.key,
+      required this.Image,
+      required this.String,
+      required this.Intro});
 
   @override
   State<Information_screen> createState() => _Information_screenState();
@@ -39,9 +45,14 @@ class _Information_screenState extends State<Information_screen> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12)),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.grey,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
@@ -71,6 +82,40 @@ class _Information_screenState extends State<Information_screen> {
                   ],
                 ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.String,
+                    style: TextStyle(
+                        color: blackColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                  Text(
+                    'Show map',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffDF9652),
+                  )
+                ],
+              ),
+            ),
+            Text(
+              widget.Intro,
             )
           ],
         ),

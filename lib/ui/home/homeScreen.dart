@@ -86,6 +86,31 @@ class _HomeScreenState extends State<HomeScreen> {
     'Zhangye-Danxia-China',
   ];
 
+  List<String> locations_Intro = [
+    "Angkor Wat, Cambodia  The largest religious monument in the world, Angkor Wat is a stunning temple complex built in the 12th century by the Khmer Empire. It is known for its intricate carvings and grand architectural design.",
+    "Bagan, Myanmar  An ancient city filled with thousands of Buddhist temples, pagodas, and stupas, Bagan offers breathtaking sunrise and sunset views over its vast archaeological landscape.",
+    "Barcelona, Spain  A vibrant city known for its rich culture, stunning architecture by Antoni Gaudí (like the Sagrada Familia), and beautiful Mediterranean beaches.",
+    "Chittorgarh Fort, India  One of the largest forts in India, Chittorgarh Fort symbolizes Rajput bravery and history. It is home to magnificent palaces, towers, and temples.",
+    "Giza, Egypt  Famous for the Great Pyramids and the Sphinx, Giza is a historical treasure showcasing the architectural and engineering marvels of ancient Egypt.",
+    "Great Ocean Road, Australia  A scenic coastal drive in Australia, home to the iconic Twelve Apostles, limestone rock formations rising dramatically from the Southern Ocean.",
+    "Huacachina, Peru  A picturesque desert oasis surrounded by sand dunes, Huacachina is popular for sandboarding, dune buggy rides, and its beautiful lagoon.",
+    "Kuang Si Falls, Laos  A stunning three-tiered waterfall near Luang Prabang, known for its turquoise pools and lush jungle surroundings.",
+    "Li River, China  A breathtaking river famous for its dramatic karst mountain landscapes, often depicted in traditional Chinese paintings.",
+    "Maldives  A tropical paradise consisting of over 1,000 coral islands, known for its luxurious resorts, crystal-clear waters, and vibrant marine life.",
+    "Meteora, Greece  A UNESCO World Heritage site featuring ancient monasteries perched atop towering rock pillars, offering stunning views and a serene atmosphere.",
+    "Pamukkale, Turkey  A natural wonder famous for its white travertine terraces filled with thermal waters, often called the “Cotton Castle.”",
+    "Petra, Jordan  The famous 'Rose City,' carved into red sandstone cliffs, is an ancient Nabatean city known for its iconic structure, Al-Khazneh (The Treasury).",
+    "Reine, Norway  A picturesque fishing village in the Lofoten Islands, Reine is known for its stunning Arctic landscapes, dramatic peaks, and northern lights.",
+    "Salar de Uyuni, Bolivia  The world s largest salt flat, which creates a mirror-like effect when covered with water, offering one of the most surreal landscapes on Earth.",
+    "St. Lucia  A Caribbean island known for its lush rainforests, volcanic beaches, and the iconic Piton mountains.",
+    "Taj Mahal, Agra, India  A UNESCO World Heritage site and one of the most beautiful architectural masterpieces, the Taj Mahal is a white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his wife.",
+    "Tianzi Mountains, China  A stunning mountain range with towering sandstone peaks, often enveloped in mist, inspiring the floating mountains in Avatar.",
+    "Torres del Paine, Chile  A national park in Patagonia known for its rugged mountains, glaciers, and breathtaking hiking trails.",
+    "Venice, Italy  The romantic 'Floating City' known for its canals, gondolas, historical landmarks, and stunning architecture.",
+    "Yellowstone National Park, USA  Americas first national park, famous for its geysers, hot springs, wildlife, and the famous Old Faithful geyser.",
+    "Zhangye Danxia, China  Known as the 'Rainbow Mountains,' this geological wonder features colorful, layered rock formations created over millions of years.",
+  ];
+
   List<String> recommend_location_names = [
     'Pamukkale-Turkey',
     'Petra-Jordan',
@@ -235,6 +260,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => Information_screen(
                                         Image: imagePaths[index],
+                                        String: location_names[index],
+                                        Intro: locations_Intro[index],
                                       )));
                             },
                             child: Container(
