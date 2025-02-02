@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/Res/Custom_color.dart';
 import 'package:travel_app_ui/custom_widgets/C_button.dart';
+import 'package:travel_app_ui/ui/home/ConfirmationScreen.dart';
 import 'package:travel_app_ui/ui/home/homeScreen.dart';
 import 'package:travel_app_ui/utils/utils.dart';
 
@@ -112,7 +113,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                             Utils().ShowToastMsg(
                                 "Checkout Successfull", blueColor);
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                                builder: (context) => Confirmationscreen()));
                           },
                           text: "Check Out",
                           b_width: 200.0)

@@ -147,7 +147,7 @@ class _Information_screenState extends State<Information_screen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 14),
@@ -167,23 +167,12 @@ class _Information_screenState extends State<Information_screen> {
                   width: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
-                      color: const Color.fromARGB(255, 57, 130, 240)
-                          .withOpacity(0.2)),
+                      color: const Color.fromARGB(255, 38, 102, 197)
+                          .withOpacity(0.6)),
                   child: Icon(
                     Icons.wifi,
                     size: 33,
-                    color: greyColor,
-                  ),
-                ),
-                Container(
-                  height: 55,
-                  width: 55,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(11),
-                      color: const Color.fromARGB(121, 209, 185, 185)),
-                  child: Icon(
-                    Icons.wifi,
-                    size: 33,
+                    color: Colors.white,
                   ),
                 ),
                 Container(
@@ -191,10 +180,12 @@ class _Information_screenState extends State<Information_screen> {
                   width: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
-                      color: const Color.fromARGB(121, 209, 185, 185)),
+                      color: const Color.fromARGB(255, 38, 102, 197)
+                          .withOpacity(0.6)),
                   child: Icon(
-                    Icons.wifi,
+                    Icons.fastfood,
                     size: 33,
+                    color: Colors.white,
                   ),
                 ),
                 Container(
@@ -202,16 +193,36 @@ class _Information_screenState extends State<Information_screen> {
                   width: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
-                      color: const Color.fromARGB(121, 209, 185, 185)),
+                      color: const Color.fromARGB(255, 38, 102, 197)
+                          .withOpacity(0.6)),
                   child: Icon(
-                    Icons.wifi,
+                    Icons.pool,
                     size: 33,
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(11),
+                      color: const Color.fromARGB(255, 38, 102, 197)
+                          .withOpacity(0.6)),
+                  child: Icon(
+                    Icons.hot_tub,
+                    size: 33,
+                    color: Colors.white,
                   ),
                 ),
               ],
             ),
+            SizedBox(
+              height: 10,
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 14,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
