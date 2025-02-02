@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app_ui/Res/Custom_color.dart';
+import 'package:travel_app_ui/custom_widgets/C_button.dart';
+import 'package:travel_app_ui/ui/home/purchase_screen.dart';
 
 class Information_screen extends StatefulWidget {
   final Image;
@@ -170,11 +172,12 @@ class _Information_screenState extends State<Information_screen> {
                   child: Icon(
                     Icons.wifi,
                     size: 33,
+                    color: greyColor,
                   ),
                 ),
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: 55,
+                  width: 55,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(11),
                       color: const Color.fromARGB(121, 209, 185, 185)),
@@ -207,6 +210,30 @@ class _Information_screenState extends State<Information_screen> {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    " \$199",
+                    style: TextStyle(
+                        color: greenColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Custom_button(
+                      color: blueColor,
+                      b_height: 45.0,
+                      ontap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Purchase_screen()));
+                      },
+                      text: 'Book Now ->',
+                      b_width: 200.0)
+                ],
+              ),
+            )
           ],
         ),
       ),
