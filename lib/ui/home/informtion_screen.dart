@@ -18,6 +18,7 @@ class Information_screen extends StatefulWidget {
 }
 
 class _Information_screenState extends State<Information_screen> {
+  List<String> fav_location = [];
   bool fav = false;
   @override
   Widget build(BuildContext context) {
@@ -66,6 +67,10 @@ class _Information_screenState extends State<Information_screen> {
                         onTap: () {
                           setState(() {
                             fav = !fav;
+
+                            if (fav == true) {
+                              fav_location.add(widget.Image.toString());
+                            }
                           });
                         },
                         child: Container(
@@ -237,6 +242,7 @@ class _Information_screenState extends State<Information_screen> {
                       color: blueColor,
                       b_height: 45.0,
                       ontap: () {
+                        print(fav_location);
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => Purchase_screen()));
                       },

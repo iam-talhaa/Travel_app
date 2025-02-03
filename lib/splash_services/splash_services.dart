@@ -12,7 +12,7 @@ class SplashServices {
   }
 
   void Goto_HomeScreen(context) {
-    Timer(Duration(seconds: 03), () {
+    Timer(Duration(seconds: 06), () {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => HomeScreen()));
     });

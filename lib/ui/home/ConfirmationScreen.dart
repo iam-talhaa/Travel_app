@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_ui/splash_services/splash_services.dart';
 
 class Confirmationscreen extends StatefulWidget {
   const Confirmationscreen({super.key});
@@ -8,6 +9,16 @@ class Confirmationscreen extends StatefulWidget {
 }
 
 class _ConfirmationscreenState extends State<Confirmationscreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    SplashServices splashServices = SplashServices();
+
+    splashServices.Goto_HomeScreen(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

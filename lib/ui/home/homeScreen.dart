@@ -167,10 +167,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   "Aspen",
                   style: TextStyle(
-                      fontSize: 32,
-                      color: blackColor,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat-VariableFont_wght'),
+                    fontSize: 30,
+                    color: blackColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               TextFormField(

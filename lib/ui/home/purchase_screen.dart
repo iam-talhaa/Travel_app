@@ -110,8 +110,6 @@ class _Purchase_screenState extends State<Purchase_screen> {
                           color: blueColor,
                           b_height: 45.0,
                           ontap: () {
-                            Utils().ShowToastMsg(
-                                "Checkout Successfull", blueColor);
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => Confirmationscreen()));
                           },
