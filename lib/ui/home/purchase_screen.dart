@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:travel_app_ui/Res/Custom_color.dart';
 import 'package:travel_app_ui/custom_widgets/C_button.dart';
 import 'package:travel_app_ui/ui/home/ConfirmationScreen.dart';
-import 'package:travel_app_ui/ui/home/homeScreen.dart';
-import 'package:travel_app_ui/utils/utils.dart';
 
 class Purchase_screen extends StatefulWidget {
   const Purchase_screen({super.key});
@@ -52,6 +50,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: _nameController,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             hintText: "Enter Full Name",
@@ -63,6 +62,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: _destinationController,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.location_city),
                             hintText: "Distination Address",
@@ -74,6 +74,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: _locationController,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.location_city_outlined),
                             hintText: "Your Location",
@@ -85,6 +86,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: _zipCodeController,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.numbers),
                             hintText: "zip code",
@@ -96,6 +98,7 @@ class _Purchase_screenState extends State<Purchase_screen> {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: _atm_Controller,
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.atm_outlined),
                             hintText: "0000 - 0000 - 0000 - 0000",
