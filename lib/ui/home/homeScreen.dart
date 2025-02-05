@@ -128,6 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {
+    print("Updated");
     return Scaffold(
       body: SafeArea(
         child: Padding(
