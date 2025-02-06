@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController _searchController = TextEditingController();
   List<String> Scroll = [
     'Location',
     'Hotel',
@@ -175,6 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               TextFormField(
+                  controller: _searchController,
                   style: TextStyle(color: blueColor),
                   decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search,
@@ -191,169 +193,192 @@ class _HomeScreenState extends State<HomeScreen> {
                                   .withOpacity(0.5),
                               style: BorderStyle.none),
                           borderRadius: BorderRadius.circular(18)))),
-              SizedBox(
-                height: 10,
-              ),
               Container(
-                height: 40,
+                height: 450,
                 width: double.infinity,
-                decoration: BoxDecoration(),
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isSelected = !isSelected;
-                    });
-                  },
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: Scroll.length,
-                      itemBuilder: (BuildContext context, index) {
-                        return Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: isSelected
-                                      ? Colors.grey.withOpacity(0.3)
-                                      : null,
-                                  borderRadius: isSelected
-                                      ? BorderRadius.circular(18)
-                                      : null),
-                              height: 30,
-                              width: 70,
-                              child: Center(
-                                  child: Text(
-                                Scroll[index].toString(),
-                                style: TextStyle(
-                                    fontWeight:
-                                        isSelected ? FontWeight.bold : null,
-                                    color: isSelected == true
-                                        ? Colors.blue
-                                        : Colors.black),
-                              )),
-                            ));
-                      }),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Popular",
-                style: TextStyle(
-                    color: blackColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-              ),
-              Container(
-                height: 200,
-                width: double.infinity,
-                decoration: BoxDecoration(),
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: imagePaths.length,
-                    itemBuilder: (BuildContext context, index) {
-                      return Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: GestureDetector(
-                            onTap: () {
-                              print("Home SCreen");
-                              print("Home SCreen");
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Information_screen(
-                                        Image: imagePaths[index],
-                                        String: location_names[index],
-                                        Intro: locations_Intro[index],
-                                      )));
-                            },
-                            child: Container(
-                              height: 130,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(18),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        imagePaths[index].toString())),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 5),
-                                    child: Container(
-                                        height: 20,
-                                        width: 180,
-                                        decoration: BoxDecoration(
-                                            color:
-                                                Colors.white.withOpacity(0.6),
-                                            borderRadius:
-                                                BorderRadius.circular(18)),
-                                        child: Center(
-                                          child: Text(
-                                              location_names[index].toString()),
-                                        )),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ));
-                    }),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "Recommended",
-                style: TextStyle(
-                    color: blackColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-              ),
-              Container(
-                height: 100,
-                width: double.infinity,
-                decoration: BoxDecoration(),
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: recommend_location_names.length,
-                    itemBuilder: (BuildContext context, index) {
-                      return Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: Container(
-                            height: 130,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                      recommend_image_path[index].toString())),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 5),
+                decoration: BoxDecoration(color: Colors.red),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 40,
+                      width: double.infinity,
+                      decoration: BoxDecoration(),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isSelected = !isSelected;
+                          });
+                        },
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: Scroll.length,
+                            itemBuilder: (BuildContext context, index) {
+                              return Padding(
+                                  padding: const EdgeInsets.only(left: 5),
                                   child: Container(
-                                      height: 20,
-                                      width: 180,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.6),
-                                          borderRadius:
-                                              BorderRadius.circular(18)),
-                                      child: Center(
+                                    decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? Colors.grey.withOpacity(0.3)
+                                            : null,
+                                        borderRadius: isSelected
+                                            ? BorderRadius.circular(18)
+                                            : null),
+                                    height: 30,
+                                    width: 70,
+                                    child: Center(
                                         child: Text(
-                                            recommend_location_names[index]
-                                                .toString()),
-                                      )),
-                                )
-                              ],
-                            ),
-                          ));
-                    }),
-              ),
+                                      Scroll[index].toString(),
+                                      style: TextStyle(
+                                          fontWeight: isSelected
+                                              ? FontWeight.bold
+                                              : null,
+                                          color: isSelected == true
+                                              ? Colors.blue
+                                              : Colors.black),
+                                    )),
+                                  ));
+                            }),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Popular",
+                      style: TextStyle(
+                          color: blackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+                      decoration: BoxDecoration(),
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: imagePaths.length,
+                          itemBuilder: (BuildContext context, index) {
+                            return Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print("Home SCreen");
+                                    print("Home SCreen");
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Information_screen(
+                                                  Image: imagePaths[index],
+                                                  String: location_names[index],
+                                                  Intro: locations_Intro[index],
+                                                )));
+                                  },
+                                  child: Container(
+                                    height: 130,
+                                    width: 200,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(18),
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              imagePaths[index].toString())),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(bottom: 5),
+                                          child: Container(
+                                              height: 20,
+                                              width: 180,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white
+                                                      .withOpacity(0.6),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          18)),
+                                              child: Center(
+                                                child: Text(
+                                                    location_names[index]
+                                                        .toString()),
+                                              )),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ));
+                          }),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Recommended",
+                      style: TextStyle(
+                          color: blackColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18),
+                    ),
+                    Container(
+                      height: 100,
+                      width: double.infinity,
+                      decoration: BoxDecoration(),
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: recommend_location_names.length,
+                          itemBuilder: (BuildContext context, index) {
+                            return Padding(
+                                padding: const EdgeInsets.only(left: 5),
+                                child: Container(
+                                  height: 130,
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(18),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(
+                                            recommend_image_path[index]
+                                                .toString())),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 5),
+                                        child: Container(
+                                            height: 20,
+                                            width: 180,
+                                            decoration: BoxDecoration(
+                                                color: Colors.white
+                                                    .withOpacity(0.6),
+                                                borderRadius:
+                                                    BorderRadius.circular(18)),
+                                            child: Center(
+                                              child: Text(
+                                                  recommend_location_names[
+                                                          index]
+                                                      .toString()),
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                ));
+                          }),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

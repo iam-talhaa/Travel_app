@@ -41,10 +41,26 @@ class _Purchase_screenState extends State<Purchase_screen> {
                       SizedBox(
                         height: 20,
                       ),
-                      Text(
-                        'Enter Your Detail',
-                        style:
-                            TextStyle(fontSize: 25, fontFamily: 'LuckiestGuy'),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Enter Your Detail',
+                            style: TextStyle(
+                                fontSize: 25, fontFamily: 'LuckiestGuy'),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 10,
