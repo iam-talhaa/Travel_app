@@ -206,6 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(),
                     child: GestureDetector(
                       onTap: () {
+                        print('Fav');
                         setState(() {
                           isSelected = !isSelected;
                         });
